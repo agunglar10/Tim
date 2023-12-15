@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:DefaultConnection"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:PekerjaLisensiContext"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:LisensiDbContext"
+    },
+    "mssql4": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:DetailsDbContext"
+    },
+    "mssql5": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:SummaryDbContext"
+    }
+  }
+}

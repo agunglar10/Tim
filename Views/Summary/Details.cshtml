@@ -1,0 +1,42 @@
+﻿@model PekerjaLisensi.Models.SummaryModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>SummaryModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Lisensi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Lisensi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JumlahLisensi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JumlahLisensi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LisensiTerpakai)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LisensiTerpakai)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LisensiTerpakaiNonKPI)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LisensiTerpakaiNonKPI)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<PekerjaLisensi.Models.Lisensi>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h5>Maintance Data Lisensi</h5>
+
+<div class="Container d-flex justify-content-between">
+    <p>
+        <a asp-action="Create" class="btn btn-success">Add Lisensi</a>
+    </p>
+    <form asp-action="HasilPencarian">
+        <div asp-validation-summary="ModelOnly" class="text-danger "></div>
+        <div class="float-end form-group d-flex ">
+            <label for="KataKunci" class="control-label"></label>
+            <input name="KataKunci" class="form-control" />
+            <input type="submit" value="Cari" class="btn btn-secondary" />
+        </div>
+    </form>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NamaLisensi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JenisLisensi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NamaLisensi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JenisLisensi)
+                    <div class="dropdown">
+                        <button class="btn " type="button" id="plusButton" data-bs-toggle="collapse" data-bs-target="#dropdownContent" aria-expanded="false" aria-controls="dropdownContent">
+                            <span class="me-2">+</span> <!-- Icon plus -->
+                            Adobe
+                        </button>
+
+                        <div class="collapse" id="dropdownContent">
+                            <div class="card card-body">
+                                <!-- Konten Dropdown -->
+                                <a href="#" class="dropdown-item">Adobe Photoshop</a>
+                                <a href="#" class="dropdown-item">Adobe Reader</a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
