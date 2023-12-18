@@ -58,10 +58,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YUxpc2Vuc2lcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Pekerja.KPI/PekerjaLisensi/Views/DataLisensi/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YUxpc2Vuc2lcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [F:/Pekerja.KPI/PekerjaLisensi/Views/DataLisensi/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YUxpc2Vuc2lcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -72,6 +68,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [F:/Pekerja.KPI/PekerjaLisensi/Views/DataPekerja/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YVBla2VyamFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Pekerja.KPI/PekerjaLisensi/Views/DataPekerja/TambahLisensi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YVBla2VyamFcVGFtYmFoTGlzZW5zaS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Pekerja.KPI/PekerjaLisensi/Views/Home/Index.cshtml]

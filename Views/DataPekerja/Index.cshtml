@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h5>Data Pekerja</h5>
 
 <table class="table">
     <thead>
@@ -45,6 +45,10 @@
 
                 <td>
                     @Html.DisplayFor(modelItem => item.StatusKaryawan)
+                </td>
+                <td>
+                    <a asp-action="TambahLisensi" asp-route-id="@item.Id" class="btn btn-primary">Tambah Lisensi</a>
+                    
                 </td>
         </tr>
 }

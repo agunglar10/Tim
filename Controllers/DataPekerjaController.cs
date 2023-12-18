@@ -30,5 +30,40 @@ namespace PekerjaLisensi.Controllers
         //{
         //    return _context.DataPekerjaModel.Any(e => e.Id == id);
         //}
+        // POST: DataPekerja/TambahLisensi
+
+        // GET: DataPekerja/TambahLisensi
+        public IActionResult TambahLisensi()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult TambahLisensi(DataPekerja dataPekerja)
+        {
+            if (ModelState.IsValid)
+            {
+                // Lakukan operasi tambah data ke basis data
+                _context.DataPekerja.Add(dataPekerja);
+
+                try
+                {
+                    _context.SaveChanges();
+                }
+                catch (DbUpdateException ex)
+                {
+                    // Tangani exception di sini
+                    Console.WriteLine(ex.Message);
+                }
+
+                // Redirect ke action Index setelah berhasil menambahkan data
+                return RedirectToAction("Index");
+            }
+
+            // Jika ModelState tidak valid, kembalikan ke view dengan model yang disertakan
+            return View(dataPekerja);
+        }
+
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PekerjaLisensi.Data;
+using PekerjaLisensi.Data.Migrations;
 using PekerjaLisensi.Models;
 
 namespace PekerjaLisensi.Controllers
@@ -56,9 +57,100 @@ namespace PekerjaLisensi.Controllers
                 return RedirectToAction("Index");
             }
 
+
             // If ModelState is not valid, return to the create view with the provided model
             return View(lisensi);
         }
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var lisensi = await _context.Lisensitable.FindAsync(id);
+            if (lisensi == null)
+            {
+                return NotFound();
+            }
+
+            return View(lisensi);
+        }
+
+        // POST: DataLisensi/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Lisensi lisensi)
+        {
+            if (id != lisensi.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Entry(lisensi).State = EntityState.Modified;
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!LisensiExists(id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(lisensi);
+        }
+
+        private bool LisensiExists(int id)
+        {
+            return _context.Lisensitable.Any(e => e.Id == id);
+        }
+
+        // GET: DataLisensi/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var lisensi = await _context.Lisensitable
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (lisensi == null)
+            {
+                return NotFound();
+            }
+
+            return View(lisensi);
+        }
+
+        // POST: DataLisensi/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var lisensi = await _context.Lisensitable.FindAsync(id);
+            if (lisensi == null)
+            {
+                return NotFound();
+            }
+
+            _context.Lisensitable.Remove(lisensi);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+
 
 
     }

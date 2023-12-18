@@ -4,15 +4,15 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h5>Tambah Lisensi</h5>
 
-<h4>DataLisensiModel</h4>
+<p>Silahkan isi Data Lisensi</p>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div class="mb-3 form-group">
                 <label class="control-label">Nama Lisensi</label>
                 <select asp-for="NamaLisensi" class="form-select" aria-label="Default select example">
                     <option value="Microsoft">Microsoft</option>
@@ -21,21 +21,20 @@
                 </select>
                 <span asp-validation-for="NamaLisensi" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="mb-3 form-group">
                 <label class="control-label">Jenis Lisensi</label>
                 <input asp-for="JenisLisensi" class="form-control" />
                 <span asp-validation-for="JenisLisensi" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="mb-3 form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Kembali</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
