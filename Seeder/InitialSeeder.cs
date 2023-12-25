@@ -13,15 +13,15 @@ public static class DataSeeder
             serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
         {
             // Cek apakah data sudah ada di database
-            if (context.DataPekerja.Any())
+            if (context.data_pekerja.Any())
             {
                 return; // Seeder sudah dijalankan sebelumnya
             }
 
             // Tambahkan data awal
-            context.DataPekerja.AddRange(
-                new DataPekerja { Nama = "John Doe", Nopek = 12345, Email = "john.doe@example.com", Posisi = "Developer", StatusKaryawan = "Aktif" },
-                new DataPekerja { Nama = "Jane Doe", Nopek = 54321, Email = "jane.doe@example.com", Posisi = "Designer", StatusKaryawan = "Aktif" }
+            context.data_pekerja.AddRange(
+                new DataPekerja { Nama = "John Doe", Nopek = "23424234", Email = "john.doe@example.com", Posisi = "Developer", StatusKaryawan = "Aktif" },
+                new DataPekerja { Nama = "Jane Doe", Nopek = "24242", Email = "jane.doe@example.com", Posisi = "Designer", StatusKaryawan = "Aktif" }
             );
 
             context.SaveChanges();

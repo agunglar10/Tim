@@ -22,14 +22,12 @@ namespace PekerjaLisensi.Controllers
         // GET: DataPekerja
         public async Task<IActionResult> Index()
         {
-            var dataLisensi = await _context.DataLisensi
-                                            .Join(_context.DataPekerja,
-                                                  lisensi => lisensi.Nopek,
-                                                  pekerja => pekerja.Nopek,
-                                                  (lisensi, pekerja) => new { Lisensi = lisensi.Lisensi })
-                                            .ToListAsync();
+            var dataPekerja = await _context.data_pekerja
+                                   .Include(p => p.DataLisensis) 
+                                       .ThenInclude(dl => dl.LisensiAja) 
+                                   .ToListAsync();
 
-            return View(dataLisensi);
+            return View(dataPekerja);
         }
 
         //private bool DataPekerjaModelExists(int id)
@@ -51,7 +49,7 @@ namespace PekerjaLisensi.Controllers
             if (ModelState.IsValid)
             {
                 // Lakukan operasi tambah data ke basis data
-                _context.DataPekerja.Add(dataPekerja);
+                _context.data_pekerja.Add(dataPekerja);
 
                 try
                 {

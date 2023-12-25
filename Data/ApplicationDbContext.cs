@@ -10,12 +10,35 @@ namespace PekerjaLisensi.Data
             : base(options)
         {
         }
-        public DbSet<PekerjaLisensi.Models.DataPekerja> DataPekerja { get; set; } = default!;
+        public DbSet<DataLisensi> data_lisensi { get; set; }
+        public DbSet<DataPekerja> data_pekerja { get; set; }
+        public DbSet<Lisensi> lisensi { get; set; }
 
+        //KEY
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //Mengabaikan EF Key Harus Integer
+            base.OnModelCreating(modelBuilder);
 
-        //dibawah contoh aja. kalo gk ada hubungannya hapus
-        public DbSet<PekerjaLisensi.Models.DataLisensi> DataLisensi { get; set; } = default!;
-        public DbSet<PekerjaLisensi.Models.Lisensi> Lisensitable { get; set; } = default!;
-        public DbSet<PekerjaLisensi.Models.Summary> Tabelsummary { get; set; } = default!;
+            //DataLisensi
+            modelBuilder.Entity<DataLisensi>().HasKey(dl => new { dl.Id });
+
+            //DataPekerja
+            modelBuilder.Entity<DataPekerja>().HasKey(dp => new { dp.Nopek });
+
+            //Lisensi
+            modelBuilder.Entity<Lisensi>().HasKey(l => new { l.Id });
+
+            //One To One Relation To Nopek DataPekerja
+            modelBuilder.Entity<DataLisensi>()
+                        .HasOne(dp => dp.DataPekerja)
+                        .WithMany(dl => dl.DataLisensis)
+                        .HasForeignKey(dl => dl.Nopek);
+            //One To Many Relation To Id Lisensi
+            modelBuilder.Entity<DataLisensi>()
+                        .HasOne<Lisensi>(l => l.LisensiAja)
+                        .WithMany(dl => dl.DataLisensis)
+                        .HasForeignKey(dl => dl.Lisensi);
+        }
     }
 }

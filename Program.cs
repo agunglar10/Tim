@@ -6,9 +6,13 @@ using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+// Database
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        new MySqlServerVersion(new Version(10, 4, 27)) // versi MySQL Anda
+    )
+);
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -27,7 +31,7 @@ using (var scope = app.Services.CreateScope())
     {
         DataSeeder.SeedData(services); // Memanggil metode seed Anda
     }
-    catch (Exception sex)
+    catch (Exception ex)
     {
         // Log or handle the exception as needed
     }

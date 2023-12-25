@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PekerjaLisensi.Data;
-using PekerjaLisensi.Data.Migrations;
 using PekerjaLisensi.Models;
 
 namespace PekerjaLisensi.Controllers
@@ -24,7 +23,7 @@ namespace PekerjaLisensi.Controllers
         // GET: DataLisensi
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Lisensitable.ToListAsync());
+            return View(await _context.lisensi.ToListAsync());
 
         }
 
@@ -41,7 +40,7 @@ namespace PekerjaLisensi.Controllers
             if (ModelState.IsValid)
             {
  
-                _context.Lisensitable.Add(lisensi);
+                _context.lisensi.Add(lisensi);
 
                 try
                 {
@@ -69,7 +68,7 @@ namespace PekerjaLisensi.Controllers
                 return NotFound();
             }
 
-            var lisensi = await _context.Lisensitable.FindAsync(id);
+            var lisensi = await _context.lisensi.FindAsync(id);
             if (lisensi == null)
             {
                 return NotFound();
@@ -113,7 +112,7 @@ namespace PekerjaLisensi.Controllers
 
         private bool LisensiExists(int id)
         {
-            return _context.Lisensitable.Any(e => e.Id == id);
+            return _context.lisensi.Any(e => e.Id == id);
         }
 
         // GET: DataLisensi/Delete/5
@@ -124,7 +123,7 @@ namespace PekerjaLisensi.Controllers
                 return NotFound();
             }
 
-            var lisensi = await _context.Lisensitable
+            var lisensi = await _context.lisensi
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (lisensi == null)
             {
@@ -139,13 +138,13 @@ namespace PekerjaLisensi.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var lisensi = await _context.Lisensitable.FindAsync(id);
+            var lisensi = await _context.lisensi.FindAsync(id);
             if (lisensi == null)
             {
                 return NotFound();
             }
 
-            _context.Lisensitable.Remove(lisensi);
+            _context.lisensi.Remove(lisensi);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

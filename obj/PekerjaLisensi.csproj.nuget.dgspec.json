@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Pekerja.KPI\\PekerjaLisensi\\PekerjaLisensi.csproj": {}
+    "D:\\Work\\Course\\New folder\\Tim\\PekerjaLisensi.csproj": {}
   },
   "projects": {
-    "F:\\Pekerja.KPI\\PekerjaLisensi\\PekerjaLisensi.csproj": {
+    "D:\\Work\\Course\\New folder\\Tim\\PekerjaLisensi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Pekerja.KPI\\PekerjaLisensi\\PekerjaLisensi.csproj",
+        "projectUniqueName": "D:\\Work\\Course\\New folder\\Tim\\PekerjaLisensi.csproj",
         "projectName": "PekerjaLisensi",
-        "projectPath": "F:\\Pekerja.KPI\\PekerjaLisensi\\PekerjaLisensi.csproj",
-        "packagesPath": "C:\\Users\\agung.gumelar\\.nuget\\packages\\",
-        "outputPath": "F:\\Pekerja.KPI\\PekerjaLisensi\\obj\\",
+        "projectPath": "D:\\Work\\Course\\New folder\\Tim\\PekerjaLisensi.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Work\\Course\\New folder\\Tim\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\agung.gumelar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -56,14 +56,6 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -71,6 +63,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.0-beta.2, )"
             }
           },
           "imports": [
