@@ -1,4 +1,4 @@
-﻿@* @model IEnumerable<PekerjaLisensi.Models.Summary>
+﻿@model IEnumerable<dynamic>
 
 @{
     ViewData["Title"] = "Index";
@@ -14,23 +14,19 @@
     
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Lisensi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JumlahLisensi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LisensiTerpakai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LisensiTerpakaiNonKPI)
-            </th>
-            <th></th>
+            <th>Lisensi</th>
+            <th>Lisensi Terpakai </th>
+            <th>Lisensi Terpakai (Non KPI)</th>
         </tr>
     </thead>
     <tbody>
-
+         @foreach (var item in Model)
+         {
+             <tr>
+                <td>@item.NamaLisensi @item.JenisLisensi</td>
+                <td>@item.JumlahLisensiTerpakai</td>
+                <td>@item.JumlahLisensiTerpakaiNonKpi</td>
+             </tr>
+         }
     </tbody>
 </table>
- *@

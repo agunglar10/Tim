@@ -12,11 +12,26 @@ namespace PekerjaLisensi.Controllers
 {
     public class ReportDetailsController : Controller
     {
+        private readonly ApplicationDbContext _context;
+
+        public ReportDetailsController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
         // GET: ReportDetails
         public async Task<IActionResult> Index()
         {
-            return View();
+            var dataReportDetails = await _context.data_pekerja
+                                .Select(x => new
+                                {
+                                    Nama = x.Nama,
+                                    Nopek = x.Nopek,
+                                    Posisi = x.Posisi,
+                                    JenisKaryawan = x.Nopek.StartsWith("2342") ? "Pekerja KPI" : "Pekerja Non KPI"
+                                })
+                                .ToListAsync();
+            return View(dataReportDetails);
         }
 
       

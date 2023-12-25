@@ -31,10 +31,10 @@
         <thead class="thead-light">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.NamaLisensi)
+                    Nama Lisensi
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.JenisLisensi)
+                    Jenis Lisensi
                 </th>
                 <th scope="col" class="text-center">Actions</th>
             </tr>
@@ -44,10 +44,10 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.NamaLisensi)
+                        @item.NamaLisensi
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.JenisLisensi)
+                        @item.JenisLisensi
                     </td>
                     <td class="text-center">
                         <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning" data-toggle="tooltip" title="Edit">

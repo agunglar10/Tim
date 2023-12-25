@@ -2,45 +2,51 @@
 
 @{
     ViewData["Title"] = "Tambah Lisensi";
+    var lisensiList = ViewBag.LisensiList as List<PekerjaLisensi.Models.Lisensi>;
+    var registeredLisensi = ViewBag.RegisteredLisensi as List<int>;
 }
-
 <h5>Tambah Lisensi</h5>
 
 <form asp-action="TambahLisensi" method="post">
     <div class="mb-3 form-group">
         <label asp-for="Nama">Nama:</label>
-        <input asp-for="Nama" class="form-control" />
+        <input asp-for="Nama" class="form-control" readonly/>
         <span asp-validation-for="Nama" class="text-danger"></span>
     </div>
     <div class="mb-3 form-group">
         <label asp-for="Nopek">Nopek:</label>
-        <input asp-for="Nopek" class="form-control" />
+        <input asp-for="Nopek" class="form-control" readonly />
         <span asp-validation-for="Nopek" class="text-danger"></span>
     </div>
     <div class="mb-3 form-group">
         <label asp-for="Email">Email:</label>
-        <input asp-for="Email" class="form-control" />
+        <input asp-for="Email" class="form-control" readonly />
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
     <div class="mb-3 form-group">
         <label asp-for="Posisi">Posisi:</label>
-        <input asp-for="Posisi" class="form-control" />
+        <input asp-for="Posisi" class="form-control" readonly />
         <span asp-validation-for="Posisi" class="text-danger"></span>
     </div>
     <div class="mb-3 form-group">
         <label asp-for="StatusKaryawan">Status Karyawan:</label>
-        <input asp-for="StatusKaryawan" class="form-control" />
+        <input asp-for="StatusKaryawan" class="form-control" readonly />
         <span asp-validation-for="StatusKaryawan" class="text-danger"></span>
     </div>
 
     <!-- Dropdown untuk Microsoft dan Dropdown -->
     <div class="mb-3 form-group">
-        <label for="NamaLisensiDropdown">Nama Lisensi:</label>
-        <select id="NamaLisensiDropdown" name="NamaLisensi" class="form-control">
-            <option value="Microsoft">Microsoft</option>
-            <option value="Adobe">Adobe</option>
+        <label for="LisensiDropdown">Lisensi:</label>
+        <select id="LisensiDropdown" name="SelectedLisensi" class="form-control">
+        @foreach (var lisensi in lisensiList)
+        {
+            var isDisabled = registeredLisensi.Contains(lisensi.Id);
+            var style = isDisabled ? "" : "font-weight: bold;";
+            <option value="@lisensi.Id" disabled="@isDisabled" style="@style">@lisensi.NamaLisensi-@lisensi.JenisLisensi</option>
+        }
         </select>
     </div>
+
 
     <div class="mb-3 form-group">
         <button type="submit" class="btn btn-primary">Simpan</button>

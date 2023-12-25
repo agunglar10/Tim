@@ -1,4 +1,4 @@
-﻿@* @model IEnumerable<PekerjaLisensi.Models.ReportDetailsModel>
+﻿@model IEnumerable<dynamic>
 
 @{
     ViewData["Title"] = "Index";
@@ -12,19 +12,22 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nopek)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
+            <th>Nopek</th>
+            <th>Nama</th>
+            <th>Posisi</th>
+            <th>Status</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-
-        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nopek</td>
+                <td>@item.Nama</td>
+                <td>@item.Posisi</td>
+                <td>@item.JenisKaryawan</td> 
+            </tr>
+        }
     </tbody>
 </table>
- *@

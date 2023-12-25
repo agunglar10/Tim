@@ -34,40 +34,57 @@ namespace PekerjaLisensi.Controllers
         //{
         //    return _context.DataPekerjaModel.Any(e => e.Id == id);
         //}
-        // POST: DataPekerja/TambahLisensi
 
         // GET: DataPekerja/TambahLisensi
-        public IActionResult TambahLisensi()
+        public IActionResult TambahLisensi(string nopek)
         {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult TambahLisensi(DataPekerja dataPekerja)
-        {
-            if (ModelState.IsValid)
+            var dataPekerja = _context.data_pekerja.FirstOrDefault(dp => dp.Nopek == nopek);
+            if (dataPekerja == null)
             {
-                // Lakukan operasi tambah data ke basis data
-                _context.data_pekerja.Add(dataPekerja);
-
-                try
-                {
-                    _context.SaveChanges();
-                }
-                catch (DbUpdateException ex)
-                {
-                    // Tangani exception di sini
-                    Console.WriteLine(ex.Message);
-                }
-
-                // Redirect ke action Index setelah berhasil menambahkan data
-                return RedirectToAction("Index");
+                // Handle not found
+                return NotFound();
             }
 
-            // Jika ModelState tidak valid, kembalikan ke view dengan model yang disertakan
+            var lisensiList = _context.lisensi.ToList();
+            ViewBag.LisensiList = lisensiList;
+
+
+            // Fetching DataLisensi records
+            ViewBag.RegisteredLisensi = _context.data_lisensi
+                                        .Where(dl => dl.Nopek == nopek)
+                                        .Select(dl => dl.Lisensi)
+                                        .ToList();
             return View(dataPekerja);
         }
+
+        // POST: DataPekerja/TambahLisensi
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult TambahLisensi(DataPekerja dataPekerja, int SelectedLisensi)
+        {
+            var newDataLisensi = new DataLisensi
+            {
+                Nopek = dataPekerja.Nopek,
+                Lisensi = SelectedLisensi
+            };
+
+            _context.data_lisensi.Add(newDataLisensi);
+
+            try
+            {
+                // Save changes in the context
+                _context.SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return View(dataPekerja);
+            }
+
+            return RedirectToAction("Index");
+
+        }
+
 
     }
 }
