@@ -27,7 +27,7 @@ using (var scope = app.Services.CreateScope())
     {
         DataSeeder.SeedData(services); // Memanggil metode seed Anda
     }
-    catch (Exception ex)
+    catch (Exception sex)
     {
         // Log or handle the exception as needed
     }

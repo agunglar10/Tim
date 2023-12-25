@@ -16,5 +16,6 @@ namespace PekerjaLisensi.Data
         //dibawah contoh aja. kalo gk ada hubungannya hapus
         public DbSet<PekerjaLisensi.Models.DataLisensi> DataLisensi { get; set; } = default!;
         public DbSet<PekerjaLisensi.Models.Lisensi> Lisensitable { get; set; } = default!;
+        public DbSet<PekerjaLisensi.Models.Summary> Tabelsummary { get; set; } = default!;
     }
 }

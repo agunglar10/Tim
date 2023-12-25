@@ -22,9 +22,15 @@ namespace PekerjaLisensi.Controllers
         // GET: DataPekerja
         public async Task<IActionResult> Index()
         {
-            return View(await _context.DataPekerja.ToListAsync());
-        }
+            var dataLisensi = await _context.DataLisensi
+                                            .Join(_context.DataPekerja,
+                                                  lisensi => lisensi.Nopek,
+                                                  pekerja => pekerja.Nopek,
+                                                  (lisensi, pekerja) => new { Lisensi = lisensi.Lisensi })
+                                            .ToListAsync();
 
+            return View(dataLisensi);
+        }
 
         //private bool DataPekerjaModelExists(int id)
         //{

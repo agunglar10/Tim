@@ -17,7 +17,7 @@ namespace PekerjaLisensi.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nama = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Nopek = table.Column<int>(type: "int", nullable: false),
+                    Nopek = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Posisi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StatusKaryawan = table.Column<string>(type: "nvarchar(max)", nullable: false)

@@ -4,51 +4,70 @@
     ViewData["Title"] = "Index";
 }
 
-<h5>Maintance Data Lisensi</h5>
+<h5>Maintenance Data Lisensi</h5>
+<p>
+    Berikut daftar Lisensi yang terpakai di PT Kilang Pertamina Internasional
+</p>
 
 <div class="Container d-flex justify-content-between">
     <p>
         <a asp-action="Create" class="btn btn-success">Add Lisensi</a>
     </p>
-    <form asp-action="HasilPencarian">
-        <div asp-validation-summary="ModelOnly" class="text-danger "></div>
-        <div class="float-end form-group d-flex ">
-            <label for="KataKunci" class="control-label"></label>
-            <input name="KataKunci" class="form-control" />
-            <input type="submit" value="Cari" class="btn btn-secondary" />
+    <form asp-action="HasilPencarian" class="mb-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="input-group">
+            <input name="KataKunci" class="form-control" placeholder="Search..." aria-label="Search" />
+            <button type="submit" class="btn btn-secondary">
+                <i class="bi bi-search"></i> Cari
+            </button>
         </div>
     </form>
+
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NamaLisensi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JenisLisensi)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-light">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NamaLisensi)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.JenisLisensi)
-                   
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.NamaLisensi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.JenisLisensi)
+                </th>
+                <th scope="col" class="text-center">Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NamaLisensi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JenisLisensi)
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning" data-toggle="tooltip" title="Edit">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" data-toggle="tooltip" title="Delete">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
+@section Scripts {
+    <script>
+        // Activate tooltips
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+}

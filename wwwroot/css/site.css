@@ -20,3 +20,42 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.navbar-vertical {
+    background-color: #F3F5F9 !important;
+    height: 535px; /* Atur tinggi sesuai keinginan Anda */
+    border-right: 1px solid #ccc;
+}
+.nav-link {
+    color: #201C1C !important;
+    
+}
+
+
+
+/* Custom Styles */
+.navbar-vertical {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-sticky {
+    padding-top: 20px;
+}
+
+.nav-link {
+    padding: 10px !important;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .nav-link:hover {
+        background-color: #84C225 !important; /* Add a subtle hover effect */
+        border-radius: 20px;
+        color: #ffffff;
+    }
+
+/* Optional: Add a border to the active link */
+.nav-item.active .nav-link {
+    border-left: 3px solid #007bff !important;
+    background-color: #610EEC !important;
+    
+}
