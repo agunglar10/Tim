@@ -30,31 +30,40 @@ namespace PekerjaLisensi.Controllers
        
         public IActionResult Create()
         {
+            ViewBag.ListLisensi = _context.lisensi
+                                .Select(l => l.NamaLisensi)
+                                .Distinct()
+                                .ToList()
+                                .Select(s => Char.ToUpper(s[0]) + s.Substring(1))
+                                .ToList();
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Lisensi lisensi)
+        public IActionResult Create(Lisensi lisensi, string NamaLisensiLainnya)
         {
-            if (ModelState.IsValid)
+
+            if (!string.IsNullOrWhiteSpace(NamaLisensiLainnya))
             {
- 
-                _context.lisensi.Add(lisensi);
-
-                try
-                {
-                    _context.SaveChanges();
-                }
-                catch (DbUpdateException ex)
-                {
-                    // Tangani exception di sini
-                    Console.WriteLine(ex.Message);
-                }
-
-                // Redirect to the index or another action
-                return RedirectToAction("Index");
+                lisensi.NamaLisensi = NamaLisensiLainnya;
             }
+
+            _context.lisensi.Add(lisensi);
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                // Tangani exception di sini
+                Console.WriteLine(ex.Message);
+            }
+
+            // Redirect to the index or another action
+            return RedirectToAction("Index");
+            
 
 
             // If ModelState is not valid, return to the create view with the provided model
@@ -87,27 +96,24 @@ namespace PekerjaLisensi.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            try
             {
-                try
-                {
-                    _context.Entry(lisensi).State = EntityState.Modified;
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!LisensiExists(id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Entry(lisensi).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
             }
-            return View(lisensi);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!LisensiExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            return RedirectToAction(nameof(Index));
+
         }
 
         private bool LisensiExists(int id)

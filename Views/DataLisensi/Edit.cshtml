@@ -16,14 +16,11 @@
                 <input type="hidden" asp-for="Id" />
 
                 <div class="mb-3">
-                    <label for="NamaLisensi" class="form-label">Nama Lisensi</label>
-                    <select asp-for="NamaLisensi" class="form-select" aria-label="Default select example">
-                        <option value="Microsoft">Microsoft</option>
-                        <option value="Adobe">Adobe</option>
-                    </select>
+                    <label for="NamaLisensi" class="form-label">Jenis Lisensi</label>
+                    <input asp-for="NamaLisensi" class="form-control" />
                     <span asp-validation-for="NamaLisensi" class="text-danger"></span>
                 </div>
-
+                
                 <div class="mb-3">
                     <label for="JenisLisensi" class="form-label">Jenis Lisensi</label>
                     <input asp-for="JenisLisensi" class="form-control" />

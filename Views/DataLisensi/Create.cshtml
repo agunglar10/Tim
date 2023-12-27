@@ -14,11 +14,14 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="mb-3 form-group">
                 <label class="control-label">Nama Lisensi</label>
-                <select asp-for="NamaLisensi" class="form-select" aria-label="Default select example">
-                    <option value="Microsoft">Microsoft</option>
-                    <option value="Adobe">Adobe</option>
-                    
+                <select id="namaLisensiSelect" asp-for="NamaLisensi" class="form-select" aria-label="Default select example" onchange="checkForOther(this);">
+                    @foreach (var item in ViewBag.ListLisensi)
+                    {
+                        <option value="@item">@item</option>
+                    }
+                    <option value="other">(+) Tambah Nama Lisensi Lain..</option>
                 </select>
+                <input type="text" id="otherNamaLisensi" name="NamaLisensiLainnya" class="form-control" style="display:none;" />
                 <span asp-validation-for="NamaLisensi" class="text-danger"></span>
             </div>
             <div class="mb-3 form-group">
@@ -37,5 +40,16 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script>
+    function checkForOther(select) {
+        var value = select.value;
+        if (value == "other") {
+            // Jika 'Lainnya' dipilih, sembunyikan dropdown dan tampilkan input text
+            document.getElementById("namaLisensiSelect").style.display = "none";
+            document.getElementById("otherNamaLisensi").style.display = "block";
+        }
+    }
+</script>
+
 }
