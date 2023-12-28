@@ -1,0 +1,48 @@
+﻿@model PekerjaLisensi.Models.DataLisensi
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h5>Tambah Lisensi</h5>
+
+<p>Silahkan isi Data Lisensi</p>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3 form-group">
+                <label class="control-label">Nama Pekerja</label>
+                <select asp-for="Nopek" class="form-select" aria-label="Default select example">
+                    @foreach (var item in ViewBag.ListPekerja)
+                    {
+                        <option value="@item.Nopek">@item.Nama</option>
+                    }
+                </select>
+                <span asp-validation-for="Nopek" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-group">
+                <label class="control-label">Nama Lisensi</label>
+                <select asp-for="Lisensi" class="form-select" aria-label="Default select example">
+                    @foreach (var item in ViewBag.ListLisensi)
+                    {
+                        <option value="@item.Id">@item.NamaLisensi.ToUpper() - @item.JenisLisensi.ToUpper()</option>
+                    }
+                </select>
+                <span asp-validation-for="Lisensi" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Kembali</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}

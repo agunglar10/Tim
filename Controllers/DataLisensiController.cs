@@ -63,11 +63,6 @@ namespace PekerjaLisensi.Controllers
 
             // Redirect to the index or another action
             return RedirectToAction("Index");
-            
-
-
-            // If ModelState is not valid, return to the create view with the provided model
-            return View(lisensi);
         }
 
         public async Task<IActionResult> Edit(int? id)

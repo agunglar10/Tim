@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -85,6 +86,39 @@ namespace PekerjaLisensi.Controllers
 
         }
 
+        public IActionResult Create()
+        {
+            ViewBag.ListPekerja = _context.data_pekerja
+                                .ToList();
+
+            ViewBag.ListLisensi = _context.lisensi
+                                .OrderBy(l => l.NamaLisensi)
+                                .ThenBy(l => l.JenisLisensi)
+                                .ToList();
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(DataLisensi dataLisensi)
+        {
+
+            _context.data_lisensi.Add(dataLisensi);
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                // Tangani exception di sini
+                Console.WriteLine(ex.Message);
+            }
+
+            // Redirect to the index or another action
+            return RedirectToAction("Index");
+
+        }
 
     }
 }

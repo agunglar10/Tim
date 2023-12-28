@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PekerjaLisensi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a44e95b453316e9d9bce61e441e201a0108a1cb2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf9f055f6b1fd6277686c5b7f40313d199ae72dd")]
 [assembly: System.Reflection.AssemblyProductAttribute("PekerjaLisensi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PekerjaLisensi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
