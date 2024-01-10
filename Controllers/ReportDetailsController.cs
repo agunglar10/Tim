@@ -28,19 +28,47 @@ namespace PekerjaLisensi.Controllers
                                     Nama = x.Nama,
                                     Nopek = x.Nopek,
                                     Posisi = x.Posisi,
-                                    JenisKaryawan = x.Nopek.StartsWith("2342") ? "Pekerja KPI" : "Pekerja Non KPI"
+
+                                    JenisKaryawan = x.StatusKaryawan.StartsWith("1") ? "Aktif" : "Tidak Aktif"
                                 })
                                 .ToListAsync();
+
             return View(dataReportDetails);
         }
 
-      
+
         // GET: ReportDetails/Create
         public IActionResult Create()
         {
             return View();
         }
 
-       
+
+        // GET: ReportDetails/SearchByNopek?searchTerm=12345
+        public async Task<IActionResult> SearchByNopek(string searchTerm)
+        {
+            // Implementasi pencarian berdasarkan Nopek
+            var dataReportDetailsQuery = _context.data_pekerja
+                .Select(x => new
+                {
+                    Nama = x.Nama,
+                    Nopek = x.Nopek,
+                    Posisi = x.Posisi,
+                    JenisKaryawan = x.StatusKaryawan.StartsWith("1") ? "Aktif" : "Tidak Aktif"
+                });
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                dataReportDetailsQuery = dataReportDetailsQuery.Where(x => x.Nopek.Contains(searchTerm));
+            }
+
+            var dataReportDetails = await dataReportDetailsQuery.ToListAsync();
+
+            // Kembalikan hasil pencarian ke laporan detail
+            return View("Index", dataReportDetails);
+        }
+
+
+
     }
 }

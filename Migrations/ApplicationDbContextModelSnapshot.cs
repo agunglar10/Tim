@@ -224,29 +224,36 @@ namespace PekerjaLisensi.Migrations
                     b.Property<int>("Lisensi")
                         .HasColumnType("int");
 
-                    b.Property<string>("Nopek")
-                        .IsRequired()
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("Pekerja")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("Lisensi");
 
-                    b.HasIndex("Nopek");
+                    b.HasIndex("Pekerja");
 
                     b.ToTable("data_lisensi");
                 });
 
             modelBuilder.Entity("PekerjaLisensi.Models.DataPekerja", b =>
                 {
-                    b.Property<string>("Nopek")
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Nama")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Nopek")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Perusahaan")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -258,7 +265,7 @@ namespace PekerjaLisensi.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("Nopek");
+                    b.HasKey("Id");
 
                     b.ToTable("data_pekerja");
                 });
@@ -343,7 +350,7 @@ namespace PekerjaLisensi.Migrations
 
                     b.HasOne("PekerjaLisensi.Models.DataPekerja", "DataPekerja")
                         .WithMany("DataLisensis")
-                        .HasForeignKey("Nopek")
+                        .HasForeignKey("Pekerja")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

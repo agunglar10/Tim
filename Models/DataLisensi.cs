@@ -5,7 +5,7 @@ namespace PekerjaLisensi.Models
     public class DataLisensi
     {
         public int Id { get; set; }
-        public String Nopek { get; set; }
+        public int Pekerja { get; set; }
         public int Lisensi { get; set; }
 
         //Relational Data

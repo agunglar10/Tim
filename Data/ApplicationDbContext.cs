@@ -24,7 +24,7 @@ namespace PekerjaLisensi.Data
             modelBuilder.Entity<DataLisensi>().HasKey(dl => new { dl.Id });
 
             //DataPekerja
-            modelBuilder.Entity<DataPekerja>().HasKey(dp => new { dp.Nopek });
+            modelBuilder.Entity<DataPekerja>().HasKey(dp => new { dp.Id });
 
             //Lisensi
             modelBuilder.Entity<Lisensi>().HasKey(l => new { l.Id });
@@ -33,7 +33,7 @@ namespace PekerjaLisensi.Data
             modelBuilder.Entity<DataLisensi>()
                         .HasOne(dp => dp.DataPekerja)
                         .WithMany(dl => dl.DataLisensis)
-                        .HasForeignKey(dl => dl.Nopek);
+                        .HasForeignKey(dl => dl.Pekerja);
             //One To Many Relation To Id Lisensi
             modelBuilder.Entity<DataLisensi>()
                         .HasOne<Lisensi>(l => l.LisensiAja)

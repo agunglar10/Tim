@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>@ViewData["Title"] - PekerjaLisensi</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
@@ -15,13 +15,14 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Vertical Section (Menu) -->
-            <nav class="navbar-vertical col-md-2 d-none d-md-block bg-light sidebar">
+            <nav class="navbar-vertical col-md-2 d-none d-md-block bg-light sidebar d-flex flex-column min-vh-100">
                 <div class="text-center">
                     <img src="/Images/logo_KPI.png" alt="Image" height="42" width="100" class="img-fluid" />
                 </div>
                 <hr>
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
+                        <!-- ... your existing code ... -->
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="DataPekerja" asp-action="Index">
                                 <i class="icon-fas fa-solid fa-user me-2"></i>
@@ -53,24 +54,24 @@
             <!-- Horizontal Section (Login/Register) and Main Content -->
             <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
                 <header>
-                    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom box-shadow mb-3">
                         <div class="container-fluid">
-                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                                    aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
+                            <!-- Button to toggle the sidebar -->
+                            <button class="btn btn-link" id="sidebarToggleBtn">
+                                <i class="fas fa-bars"></i>
                             </button>
-                            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                            <!-- ... existing code ... -->
+                            <div class="navbar-collapse collapse d-md-inline-flex justify-content-between">
                                 <ul class="navbar-nav flex-grow-1">
-                                    <!-- Additional menu items can be added here -->
+                                    <!-- ... your existing code ... -->
                                 </ul>
                                 <partial name="_LoginPartial" />
                             </div>
                         </div>
                     </nav>
                 </header>
-                <div class="container">
-                    <!-- Your main content goes here -->
+                <div class="container-fluid">
+                    <!-- untuk merender konten utama dari sebuah halaman -->
                     <main role="main" class="pb-3">
                         @RenderBody()
                     </main>
@@ -79,14 +80,22 @@
         </div>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted text-center">
         <div class="container">
-            &copy; 2023 - Kilang Pertamina Internasional - <a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
+            &copy; 2024 - Kilang Pertamina Internasional - <a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        $(document).ready(function () {
+            $("#sidebarToggleBtn").click(function () {
+                $(".navbar-vertical").toggleClass("d-none d-md-block");
+            });
+        });
+    </script>
 </body>
 </html>

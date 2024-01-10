@@ -1,0 +1,50 @@
+﻿@model PekerjaLisensi.Models.DataPekerja
+
+@{
+    ViewData["Title"] = "Delete All Lisensi";
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="text-center">Hapus lisensi yang diberikan kepada @Model.Nama</h5>
+        </div>
+        <div class="card-body">
+            <form asp-action="DeleteAllLisensi" method="post">
+                <p class="lead text-center">Anda yakin ingin menghapus beberapa lisensi untuk pekerja ini?</p>
+
+                <div class="form-group mb-3">
+                    <!-- Tambahkan margin-bottom di sini -->
+                    <label for="SelectedLisensi">Pilih Lisensi yang Akan Dihapus</label>
+                    <select id="SelectedLisensi" name="SelectedLisensi" class="form-control">
+                        @if (ViewBag.LisensiList != null && ViewBag.LisensiList is List<SelectListItem>)
+                        {
+                            var lisensiList = ViewBag.LisensiList as List<SelectListItem>;
+                            foreach (var item in lisensiList)
+                            {
+                                <option value="@item.Value">@item.Text</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="d-flex justify-content-start">
+                    <!-- Memindahkan ke kiri -->
+                    <button type="submit" class="btn btn-danger mr-2">Hapus Lisensi Terpilih</button>
+                    <a asp-action="Index" class="btn btn-secondary" style="margin-left: 8px;">Batal</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('form').submit(function () {
+                $('select[name="SelectedLisensi[]"] option').prop('selected', true);
+            });
+        });
+    </script>
+}

@@ -4,52 +4,62 @@
     ViewData["Title"] = "Create";
 }
 
-<h5>Tambah Lisensi</h5>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="mb-4 text-center">Tambah Lisensi</h5>
+                    <p class="text-center">Silahkan isi Data Lisensi</p>
+                    <hr />
 
-<p>Silahkan isi Data Lisensi</p>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="mb-3 form-group">
-                <label class="control-label">Nama Lisensi</label>
-                <select id="namaLisensiSelect" asp-for="NamaLisensi" class="form-select" aria-label="Default select example" onchange="checkForOther(this);">
-                    @foreach (var item in ViewBag.ListLisensi)
-                    {
-                        <option value="@item">@item</option>
-                    }
-                    <option value="other">(+) Tambah Nama Lisensi Lain..</option>
-                </select>
-                <input type="text" id="otherNamaLisensi" name="NamaLisensiLainnya" class="form-control" style="display:none;" />
-                <span asp-validation-for="NamaLisensi" class="text-danger"></span>
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="mb-3 form-group">
+                            <label class="control-label">Nama Lisensi</label>
+                            <select id="namaLisensiSelect" asp-for="NamaLisensi" class="form-select" aria-label="Default select example" onchange="checkForOther(this);">
+                                @foreach (var item in ViewBag.ListLisensi)
+                                {
+                                    <option value="@item">@item</option>
+                                }
+                                <option value=""></option>
+                                <option value="other">(+) Tambah Nama Lisensi Lain..</option>
+                            </select>
+                            <input type="text" id="otherNamaLisensi" name="NamaLisensiLainnya" class="form-control mt-2" style="display:none;" placeholder="Tambah Nama Lisensi Lainnya" />
+                            <span asp-validation-for="NamaLisensi" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3 form-group">
+                            <label class="control-label">Jenis Lisensi</label>
+                            <input asp-for="JenisLisensi" class="form-control" />
+                            <span asp-validation-for="JenisLisensi" class="text-danger"></span>
+                        </div>
+
+                        <div class="text-left">
+                            <input type="submit" value="Create" class="btn btn-primary d-inline-block me-2" />
+                            <a asp-action="Index" class="btn btn-secondary d-inline-block">Kembali</a>
+                        </div>
+
+                    </form>
+                </div>
             </div>
-            <div class="mb-3 form-group">
-                <label class="control-label">Jenis Lisensi</label>
-                <input asp-for="JenisLisensi" class="form-control" />
-                <span asp-validation-for="JenisLisensi" class="text-danger"></span>
-            </div>
-            <div class="mb-3 form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-                <a asp-action="Index" class="btn btn-secondary">Kembali</a>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-
-
 @section Scripts {
-@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-<script>
-    function checkForOther(select) {
-        var value = select.value;
-        if (value == "other") {
-            // Jika 'Lainnya' dipilih, sembunyikan dropdown dan tampilkan input text
-            document.getElementById("namaLisensiSelect").style.display = "none";
-            document.getElementById("otherNamaLisensi").style.display = "block";
-        }
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-</script>
-
+    <script>
+        function checkForOther(select) {
+            var value = select.value;
+            if (value == "other") {
+                // Jika 'Lainnya' dipilih, sembunyikan dropdown dan tampilkan input text
+                document.getElementById("namaLisensiSelect").style.display = "none";
+                document.getElementById("otherNamaLisensi").style.display = "block";
+            }
+        }
+    </script>
 }

@@ -17,135 +17,143 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PekerjaLisensi
 build_property.RootNamespace = PekerjaLisensi
-build_property.ProjectDir = D:\Work\Course\New folder\Tim\
+build_property.ProjectDir = F:\New folder\Tim\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Work\Course\New folder\Tim
+build_property.MSBuildProjectDirectory = F:\New folder\Tim
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Work/Course/New folder/Tim/Areas/Identity/Pages/Account/Login.cshtml]
+[F:/New folder/Tim/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Areas/Identity/Pages/Account/Register.cshtml]
+[F:/New folder/Tim/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[F:/New folder/Tim/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[F:/New folder/Tim/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Areas/Identity/Pages/_ViewImports.cshtml]
+[F:/New folder/Tim/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Areas/Identity/Pages/_ViewStart.cshtml]
+[F:/New folder/Tim/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/DataLisensi/Create.cshtml]
+[F:/New folder/Tim/Views/DataLisensi/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YUxpc2Vuc2lcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/DataLisensi/Delete.cshtml]
+[F:/New folder/Tim/Views/DataLisensi/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YUxpc2Vuc2lcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/DataLisensi/Edit.cshtml]
+[F:/New folder/Tim/Views/DataLisensi/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YUxpc2Vuc2lcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/DataLisensi/Index.cshtml]
+[F:/New folder/Tim/Views/DataLisensi/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YUxpc2Vuc2lcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/DataPekerja/Create.cshtml]
+[F:/New folder/Tim/Views/DataPekerja/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YVBla2VyamFcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/DataPekerja/Index.cshtml]
+[F:/New folder/Tim/Views/DataPekerja/DeleteAllLisensi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YVBla2VyamFcRGVsZXRlQWxsTGlzZW5zaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/New folder/Tim/Views/DataPekerja/EditLisensi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YVBla2VyamFcRWRpdExpc2Vuc2kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/New folder/Tim/Views/DataPekerja/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YVBla2VyamFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/DataPekerja/TambahLisensi.cshtml]
+[F:/New folder/Tim/Views/DataPekerja/PagerPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YVBla2VyamFcUGFnZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/New folder/Tim/Views/DataPekerja/TambahLisensi.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0YVBla2VyamFcVGFtYmFoTGlzZW5zaS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/Home/Index.cshtml]
+[F:/New folder/Tim/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/Home/Privacy.cshtml]
+[F:/New folder/Tim/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/ReportDetails/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0RGV0YWlsc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Work/Course/New folder/Tim/Views/ReportDetails/Delete.cshtml]
+[F:/New folder/Tim/Views/ReportDetails/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0RGV0YWlsc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/ReportDetails/Details.cshtml]
+[F:/New folder/Tim/Views/ReportDetails/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0RGV0YWlsc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/ReportDetails/Edit.cshtml]
+[F:/New folder/Tim/Views/ReportDetails/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0RGV0YWlsc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/ReportDetails/Index.cshtml]
+[F:/New folder/Tim/Views/ReportDetails/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0RGV0YWlsc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/Shared/Error.cshtml]
+[F:/New folder/Tim/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/Shared/_LoginPartial.cshtml]
+[F:/New folder/Tim/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/Shared/_ValidationScriptsPartial.cshtml]
+[F:/New folder/Tim/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/Summary/Create.cshtml]
+[F:/New folder/Tim/Views/Summary/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VtbWFyeVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/Summary/Delete.cshtml]
+[F:/New folder/Tim/Views/Summary/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VtbWFyeVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/Summary/Details.cshtml]
+[F:/New folder/Tim/Views/Summary/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VtbWFyeVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/Summary/Edit.cshtml]
+[F:/New folder/Tim/Views/Summary/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VtbWFyeVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/Summary/Index.cshtml]
+[F:/New folder/Tim/Views/Summary/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VtbWFyeVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/_ViewImports.cshtml]
+[F:/New folder/Tim/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/_ViewStart.cshtml]
+[F:/New folder/Tim/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Work/Course/New folder/Tim/Views/Shared/_Layout.cshtml]
+[F:/New folder/Tim/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-dulb306bzx

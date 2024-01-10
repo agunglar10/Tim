@@ -6,23 +6,13 @@
 
 <h5>Maintenance Data Lisensi</h5>
 <p>
-    Berikut daftar Lisensi yang terpakai di PT Kilang Pertamina Internasional
+    Berikut daftar Lisensi yang ada untuk pekerja di PT Kilang Pertamina Internasional
 </p>
 
 <div class="Container d-flex justify-content-between">
     <p>
         <a asp-action="Create" class="btn btn-success">Add Lisensi</a>
     </p>
-    <form asp-action="HasilPencarian" class="mb-4">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-        <div class="input-group">
-            <input name="KataKunci" class="form-control" placeholder="Search..." aria-label="Search" />
-            <button type="submit" class="btn btn-secondary">
-                <i class="bi bi-search"></i> Cari
-            </button>
-        </div>
-    </form>
 
 </div>
 
@@ -41,19 +31,21 @@
         </thead>
         <tbody>
             @foreach (var item in Model)
+            // foreach sebai looping untuk variabel item dalam model yang membawa data controller ke views
             {
                 <tr>
                     <td>
                         @item.NamaLisensi
+                       
                     </td>
                     <td>
                         @item.JenisLisensi
                     </td>
                     <td class="text-center">
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning" data-toggle="tooltip" title="Edit">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn text-warning" data-toggle="tooltip" title="Edit">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" data-toggle="tooltip" title="Delete">
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn text-danger" data-toggle="tooltip" title="Delete">
                             <i class="fas fa-trash"></i>
                         </a>
                     </td>

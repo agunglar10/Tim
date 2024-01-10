@@ -7161,19 +7161,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\agung.gumelar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Work\\Course\\New folder\\Tim\\PekerjaLisensi.csproj",
+      "projectUniqueName": "F:\\New folder\\Tim\\PekerjaLisensi.csproj",
       "projectName": "PekerjaLisensi",
-      "projectPath": "D:\\Work\\Course\\New folder\\Tim\\PekerjaLisensi.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Work\\Course\\New folder\\Tim\\obj\\",
+      "projectPath": "F:\\New folder\\Tim\\PekerjaLisensi.csproj",
+      "packagesPath": "C:\\Users\\agung.gumelar\\.nuget\\packages\\",
+      "outputPath": "F:\\New folder\\Tim\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\agung.gumelar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

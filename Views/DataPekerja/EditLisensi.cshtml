@@ -1,0 +1,46 @@
+﻿@model PekerjaLisensi.Models.DataPekerja
+
+@{
+    ViewData["Title"] = "Edit Lisensi";
+}
+
+<h5 class="text-center">Edit Lisensi untuk @Model.Nama</h5>
+
+<form asp-action="EditLisensi" method="post" class="mt-4">
+    <div class="form-group">
+        <label for="SelectedLisensi">Pilih Lisensi:</label>
+        <select id="SelectedLisensi" name="selectedLisensi" class="form-control">
+            @foreach (var item in ViewBag.LisensiList as SelectList)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="NamaLisensi">Nama Lisensi:</label>
+        <input type="text" id="NamaLisensi" name="namaLisensi" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="JenisLisensi">Jenis Lisensi:</label>
+        <input type="text" id="JenisLisensi" name="jenisLisensi" class="form-control">
+    </div>
+
+    <div class="text-left mt-2">
+        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+        <a asp-action="Index" class="btn btn-secondary ml-2">Batal</a>
+    </div>
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementById('SelectedLisensi').addEventListener('change', function () {
+            var selectedLisensiId = this.value;
+            var lisensiList = @Html.Raw(Json.Serialize(ViewBag.LisensiList));
+            var selectedLisensi = lisensiList.find(l => l.Value === selectedLisensiId);
+            document.getElementById('NamaLisensi').value = selectedLisensi ? selectedLisensi.Text.split('-')[0] : '';
+            document.getElementById('JenisLisensi').value = selectedLisensi ? selectedLisensi.Text.split('-')[1] : '';
+        });
+    </script>
+}

@@ -25,7 +25,7 @@ namespace PekerjaLisensi.Controllers
                                             NamaLisensi = lisensi.NamaLisensi,
                                             JenisLisensi = lisensi.JenisLisensi,
                                             JumlahLisensiTerpakai = dataLisensiGroup.Count(),
-                                            JumlahLisensiTerpakaiNonKpi = dataLisensiGroup.Count(dl => !dl.DataPekerja.Nopek.StartsWith("2342"))
+                                            JumlahLisensiTerpakaiNonKpi = dataLisensiGroup.Count(dl => !dl.DataPekerja.StatusKaryawan.StartsWith("1"))
                                         })
                                     .ToListAsync();
             return View(dataReportSummary);
